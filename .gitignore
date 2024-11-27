@@ -1,2 +1,23 @@
-./venv
-./__pycache__
+# Byte-compiled files and directories
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# IDE configurations (optional, based on your setup)
+.vscode/
+.idea/
+*.swp
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# OS-specific files
+.DS_Store       # macOS
+Thumbs.db       # Windows

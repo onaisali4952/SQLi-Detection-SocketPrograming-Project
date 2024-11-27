@@ -28,7 +28,7 @@ def handle_client(client_socket, client_address):
                 print(f"[WARNING] SQL Injection attempt detected from {client_address}. Disconnecting client...")
                 client_socket.send(b"SQL Injection detected! Disconnecting...\n")
                 # Log blocked input for further inspection (to evaluate false positives)
-                with open("log_attackPrevented.txt", "a") as file:
+                with open("log_attackPrevented.log", "a") as file:
                     string_to_write = '\n'+client_input
                     file.write(string_to_write+'\n')
                 break  # Disconnect the client
@@ -37,7 +37,7 @@ def handle_client(client_socket, client_address):
                 response = f"Processed input: {client_input}\n"
                 print(response)
                 # Log allowed input for further inspection (to evaluate true negatives)
-                with open("log_safeInput.txt", "a") as file:
+                with open("log_safeInput.log", "a") as file:
                     string_to_write = '\n'+client_input
                     file.write(string_to_write+'\n')
                 client_socket.send(response.encode("utf-8"))

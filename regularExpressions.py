@@ -11,8 +11,9 @@ sql_injection_patterns = [
     r"select\s+\*",     # SELECT *
     r"\'\s+or",         # ' OR
     r"\bwhere\b.*\b(or|and)\b.*="   # WHERE statement
-    r"\bupdate\b.*\bset\b.*="       # UPDATE statement
+    r"\bupdate\b.*\bset\b.*(\bwhere\b.*(like|or|and|=))"  # UPDATE statement
     r";.*\b(drop|select|insert|delete|update)\b"  # Multiline statement
+    r"\blike\b.*['\"].*['\"]"  # Catches any LIKE keyword in input
 ]
 
 # Function to detect SQL injection
