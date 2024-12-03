@@ -21,3 +21,6 @@ env/
 # OS-specific files
 .DS_Store       # macOS
 Thumbs.db       # Windows
+
+# Latex code for project report
+Latex_IS_Report.txt
